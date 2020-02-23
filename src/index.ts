@@ -1,5 +1,6 @@
+import avatar from './asserts/a.jpg'
+import './style/index.less'
 let hello:string ='hello world'
-let img = require('./asserts/a.jpg')
-console.log(img);
+console.log(avatar);
 
 // document.querySelector('.app')
