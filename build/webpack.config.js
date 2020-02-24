@@ -61,8 +61,16 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env"]
+            options:{
+              "presets": [
+                [// 转es5的模块
+                  "@babel/preset-env",
+                  {// 处理polyfill的方式
+                    "useBuiltIns": "usage",
+                    "corejs":3
+                  }
+                ]
+              ]
             }
           },
           {
