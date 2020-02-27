@@ -3,6 +3,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   // 入口文件目录
   entry: "./src/index.ts",
+  resolve: {
+    extensions: [".tsx", ".js", ".mjs", ".ts", ".json"]
+  },
   module: {
     rules: [
       // { test: /\.ts$/, use: "ts-loader", exclude: /node_modules/ },
