@@ -15,3 +15,4 @@ import "./demo/avatar.ts";
 import "./demo/babel.ts";
 import "./demo/tree_shaking.ts";
 import "./demo/enum.ts";
+import "./demo/interface";

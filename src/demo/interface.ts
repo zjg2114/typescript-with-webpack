@@ -35,3 +35,60 @@ class AnalogClock implements ClockInterface {
 }
 let digital = createClock(DigitalClock, 12, 17);
 let analog = createClock(AnalogClock, 2, 15);
+
+//接口继承
+interface Person {
+  age: number;
+}
+interface Grade {
+  year: number;
+}
+interface Student extends Grade, Person {
+  skill: string;
+}
+let hanhan: Student = {
+  age: 18,
+  year: 1,
+  skill: "learn"
+};
+
+// 混合类型
+interface Counter {
+  (start: number): string;
+  interval: number;
+  reset(): void;
+}
+
+function getCounter(): Counter {
+  let counter = function(star: number) {
+    return "aa";
+  } as Counter;
+  counter.interval = 1;
+  counter.reset = () => {
+    console.log("reset");
+  };
+  return counter;
+}
+let ccc = getCounter();
+console.log(Object.prototype.toString.call(ccc));
+
+//接口继承类
+class Control {
+  // 私有属性不能被实例访问
+  private state: any;
+  age: number;
+  constructor() {
+    this.age = 123;
+  }
+}
+
+interface SelectableControl extends Control {
+  select(): void;
+}
+class Button extends Control implements SelectableControl {
+  select() {
+    console.log("Button");
+  }
+}
+let btn = new Button();
+console.log(btn);
