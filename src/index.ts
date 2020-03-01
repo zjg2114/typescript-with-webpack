@@ -16,3 +16,4 @@ import "./demo/babel.ts";
 import "./demo/tree_shaking.ts";
 import "./demo/enum.ts";
 import "./demo/interface";
+import "./demo/class.ts";
